@@ -1,3 +1,89 @@
+# `createModal` JavaScript Function
+
+This repository provides a custom JavaScript function, `createModal`, which creates a modal for displaying images (or pages) within a fixed-position overlay. The modal can be triggered by a button and can be closed with another button. It has been designed for use with the iPaperJS API to navigate through pages, and it adjusts its styles based on the screen size to ensure a responsive design.
+
+## Function Overview
+
+The `createModal` function initializes a modal that:
+- Displays a button (open) at a specified location on the screen (either left or right).
+- Shows a modal window when the button is clicked, displaying pages or images from a source URL.
+- Includes a header with customizable text and a close button.
+- Adjusts its layout and styling depending on the device's screen size (mobile vs. desktop).
+
+### Parameters
+- **`text`** (string): The text to display in the header of the modal. If the text exceeds **21 characters**, it will be truncated to **18 characters** and ellipsized (`...`) to fit within the design.
+- **`location`** (string): The location of the open button. Can be `'left'` or `'right'`. This determines where the button appears on the screen.
+
+### Function Breakdown
+
+The function performs the following steps:
+
+1. **Initialization**:
+   - It starts by creating the `iPaperJsApi` instance.
+   - Logs the current URL and initializes modal components (open button, close button, and modal div).
+   
+2. **Modal Styles**:
+   - Applies different styles based on the screen size. For mobile devices, the modal takes up the full screen, while on desktop, it has a fixed width and height.
+   
+3. **Button Creation**:
+   - A floating button is created to trigger the modal. The button is placed either on the left or right side of the screen based on the `location` parameter.
+   
+4. **Modal Content**:
+   - The modal displays images or pages (from a URL) with overlay effects. The images are displayed in a grid layout, and the user can navigate between them by clicking on the page number.
+   
+5. **Responsive Design**:
+   - The modal adapts to different screen sizes (mobile and desktop) by adjusting the layout, text styles, and other visual aspects.
+   
+6. **Close Functionality**:
+   - The modal can be closed by clicking the close button (the "X" icon) in the header or navigating to a page pressing the page miniature.
+
+## Example Usage
+
+To use this function in your project, call it with the desired parameters:
+
+```javascript
+createModal('Click here to view', 'right');
+```
+
+This will create a modal with the header text "Click here to view" and position the open button on the right side of the screen.
+
+## Customization
+
+### Change Button Location
+The modal open button can be positioned on the **left** or **right** side of the screen. This is controlled by the `location` parameter passed to the function.
+
+```javascript
+createModal('Example Modal', 'left'); // Button will appear on the left side
+```
+
+## Mobile vs Desktop Styles
+The modal will adjust its styling depending on the device:
+
+- **Mobile**: Full-screen modal with a background color and no borders.
+- **Desktop**: Fixed modal with a maximum height and width.
+
+This ensures that the modal is usable across different screen sizes.
+
+## Text Truncation
+If the `text` parameter exceeds **21 characters**, the text will be truncated to **18 characters** with an ellipsis (`...`) appended to fit within the design.
+
+```javascript
+createModal('This is a long text that will be truncated', 'right');
+// This will display "This is a long tex..." in the modal header.
+```
+
+## License
+This code is provided as-is. Feel free to use and modify the function as needed, but remember that it is **not officially supported by iPaper** and may not work in future versions of their platform. Be sure to test thoroughly if you're planning to integrate this into a production environment.
+
+## Important Notes
+
+### Not Officially Supported by iPaper
+This solution is **not officially supported by iPaper** and may stop working at any time. iPaper does not guarantee that this function will continue to work in future versions of their platform, and updates to iPaper may cause the modal functionality to break.
+
+### Inspiration for Your Own Modal
+This code is meant as an **inspiration point** for creating your own modal. While it offers a starting point, you may need to modify or extend it based on your specific requirements. If you're looking for more advanced functionality (e.g., custom transitions, animations, etc.), consider using additional libraries or frameworks for modals, such as **Bootstrap** or custom JavaScript solutions.
+
+
 <details>
 <summary>Click to see the code</summary>
 
