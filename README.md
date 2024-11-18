@@ -1,6 +1,6 @@
 # `createModal` JavaScript Function
 
-This repository provides a custom JavaScript function, `createModal`, which creates a modal for displaying images (or pages) within a fixed-position overlay. The modal can be triggered by a button and can be closed with another button. It has been designed for use with the iPaperJS API to navigate through pages, and it adjusts its styles based on the screen size to ensure a responsive design.
+This repository provides a custom JavaScript function, `createModal`, which creates a modal for displaying miniature pages and by pressing them it navigates the Flipbook to the selected page. The modal can be triggered by a button and can be closed with another button. The modal uses the iPaperJS API to trigger the navigation elements, and it adjusts its styles based on the screen size to ensure a responsive design.
 
 ## Function Overview
 
@@ -82,6 +82,27 @@ This solution is **not officially supported by iPaper** and may stop working at 
 
 ### Inspiration for Your Own Modal
 This code is meant as an **inspiration point** for creating your own modal. While it offers a starting point, you may need to modify or extend it based on your specific requirements. If you're looking for more advanced functionality (e.g., custom transitions, animations, etc.), consider using additional libraries or frameworks for modals, such as **Bootstrap** or custom JavaScript solutions.
+
+##How to use
+
+There are two ways to use the modal:
+
+###Import the Code
+
+To use the createModal function in your project, you can include the following code:
+```JavaScript
+<script src="https://a-cilli.github.io/custom-scripting-navigation-modal/modal.js"></script>
+<script>
+  createModal("Hello World", "right");
+</script>
+```
+* The first <script> tag imports the JavaScript file from the specified URL. This file contains the definition of the createModal function.
+* The second <script> tag calls the createModal function. In this example, it creates a modal with the text "Hello World" positioned on the right side.
+
+
+###Use the code
+
+The following snippet includes the complete code to create the modal in the Flipbook. Keep in mind that this code must be wrapped in a <script> tag, and the function needs to be called with the appropriate parameters afterwards.
 
 
 <details>
